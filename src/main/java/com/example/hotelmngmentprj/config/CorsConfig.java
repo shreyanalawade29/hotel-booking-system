@@ -18,8 +18,9 @@ public class CorsConfig {
 	    @Override
         public void addCorsMappings (CorsRegistry registry) {
 	    registry.addMapping("/**")
-	    .allowedOrigins("http://localhost:5173")
+	    .allowedOrigins("http://localhost:5173", "https://hotelbookingfront.vercel.app")
 	    .allowedMethods ("*")
+	    .allowedHeaders("*")
         .allowCredentials (true);
 
 }
@@ -29,7 +30,9 @@ public class CorsConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration= new CorsConfiguration();
-	configuration.setAllowedOrigins (List.of ("http://localhost:5173"));
+	configuration.setAllowedOrigins (List.of ("http://localhost:5173",
+			 "https://hotelbookingfront.vercel.app"
+			));
 	configuration.setAllowedMethods (List.of("*"));
      configuration.setAllowedHeaders (List.of("*"));
 	configuration.setAllowCredentials (true);
