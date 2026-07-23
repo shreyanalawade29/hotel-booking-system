@@ -34,7 +34,7 @@ public class HotelmngmentprjApplication {
 	            admin.setEmail("admin@gmail.com");
 	            admin.setPhone("9999999999");
 	            admin.setPassword(
-	                    encoder.encode("admin123"));
+	                    encoder.encode("Admin@123"));
 	            admin.setRole("ADMIN");
 
 	            repo.save(admin);
